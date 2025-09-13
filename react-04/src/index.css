@@ -45,11 +45,11 @@ h3{
   border-radius: 10px;
 margin: 10px;
 
-  padding: 25px;
+  padding: 15px;
 }
 .container{
   max-width: 100%;
-    margin: 5% auto 1%;
+    margin: 7% auto 1%;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
@@ -67,6 +67,9 @@ button{
   padding: 8px 35px;
   text-transform: capitalize;
   cursor: pointer;
+}
+pre{
+  text-transform: lowercase
 }
 img{
   width: 100%;

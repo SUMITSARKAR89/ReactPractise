@@ -31,17 +31,26 @@ const users = [
 ];
 
 const code = `
+   const users = [
+  {
+    name: "sumit sarkar",
+    dept: "CSE",
     semister: [
       { subjectOne: "HTML" },
       { subjectTwo: "JavaScript" },
       { subjectThree: "React JS" },
-    ]`;
+    ],
+    phone: "+000111222",
+  },`;
 export default function Nestedmap() {
   return (
     <div className="nestedmap">
       <h2>
-        <span>Example 1 :</span> Nested Map with array
+        <span>Example 4 :</span> Nested Map with array
       </h2>
+      <pre>
+        {code}
+      </pre>
       <div className="container">
         {users.map((user, index) => (
           <div className="card" key={index}>
@@ -61,13 +70,7 @@ export default function Nestedmap() {
             <p>Phone: {user.phone}</p>
           </div>
         ))}
-        <div className="card">
-         <div className="cardColor">
-           {code}
-         </div>
-         
-        
-        </div>
+       
       </div>
     </div>
   );

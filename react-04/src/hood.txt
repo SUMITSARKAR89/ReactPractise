@@ -1,0 +1,95 @@
+A--------------- normal or default----------------- 
+Ex:1 JSX version
+function Hood () {
+    return <h1> hello</h1>
+}
+
+OR
+
+Ex:2 Under the hood
+fucntion Hood2 (){
+    return React.createElement( "h1", {}, "this is hood two")
+} 
+
+B---------------------- nested --------------------
+Ex:3 JSX version
+fucntion NestedHood (){
+    return (
+        <div>
+            <p> title</p>
+            <p> this is description</p>
+        </div>
+    )
+}; 
+
+OR 
+Ex:4 Under the hood
+function NestedHood2 (){
+    return React.createElement( "div", {}, 
+    React.createElement("p", {}, "title"),
+    React.createElement("p", {}, "this is description")
+    )
+}
+
+C------------------using props------------------------
+Ex:5 JSX version
+
+function User(props) {
+  return 
+    <p>
+        Name: {props.name}
+    </p>;
+}
+
+OR
+
+
+Ex:6 Under the hood
+function User2 (props){
+    return React.createElement( "p", {} , `Name: ${props.name}`)
+}
+
+
+
+export default fuction App(){
+    return(
+        <div>
+            <Hood />
+            <Hood2 />
+            <NestedHood />
+            <NestedHood2 />
+            <USer />
+            <USer2 />
+        </div>
+    )
+};
+
+
+
+
+
+--------------------------------------------
+//Ex 1: output (Hood)
+hello
+
+--------------------------------------------
+//Ex 2: output (Hood2)
+this is hood two
+
+--------------------------------------------
+//Ex 3: output (NestedHood)
+title
+this is description
+
+--------------------------------------------
+//Ex 4: output (NestedHood2)
+title 
+this is description
+
+--------------------------------------------
+//Ex 5: output (User)
+name: 
+
+--------------------------------------------
+//Ex 6: output (User2)
+name: 

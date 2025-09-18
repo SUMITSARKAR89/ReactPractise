@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "./components/Icon";
 // A--------------- normal or default-----------------
 // Ex:1 JSX version
 
@@ -12,20 +13,24 @@ function Hood() {
 }
 // Ex:2 Under the hood
 function Hood2() {
-  return React.createElement("div", {}, 
-    React.createElement("p", {className: "ex"}, "Ex:2 Under the hood"),
-  React.createElement("h4", {}, "this is hood two"))
+  return React.createElement(
+    "div",
+    {},
+    React.createElement("p", { className: "ex" }, "Ex:2 Under the hood"),
+    React.createElement("h4", {}, "this is hood two")
+  );
 }
 
 // B---------------------- nested --------------------
 // Ex:3 JSX version
 function NestedHood() {
   return (
-    <><p className="ex"> Ex:3 JSX version</p>
-    <div>
-      <p> title</p>
-      <p> this is description</p>
-    </div>
+    <>
+      <p className="ex"> Ex:3 JSX version</p>
+      <div>
+        <p> title</p>
+        <p> this is description</p>
+      </div>
     </>
   );
 }
@@ -45,18 +50,26 @@ function NestedHood2() {
 // Ex:5 JSX version
 
 function User(props) {
-  return <>
-  <p className="ex">Ex:5 JSX version `(props)`</p>
-  <p>Name: {props.name}</p>
-  </>;
+  return (
+    <>
+      <p className="ex">Ex:5 JSX version `(props)`</p>
+      <p>Name: {props.name}</p>
+    </>
+  );
 }
 
 // Ex:6 Under the hood
 function User2(props) {
-  return React.createElement("div", {}, 
-    React.createElement("p", {className: "ex"}, "Ex:6 Under the hood (props)"),
+  return React.createElement(
+    "div",
+    {},
+    React.createElement(
+      "p",
+      { className: "ex" },
+      "Ex:6 Under the hood (props)"
+    ),
     React.createElement("p", {}, `Name: ${props.name}`)
-  )
+  );
 }
 
 // D------------------Listed hood using MAP------------------------
@@ -66,7 +79,7 @@ function List() {
   const items = ["HTML", "CSS", "JavaScript"];
   return (
     <>
-    <p className="ex">Ex:7 JSX version mapping</p>
+      <p className="ex">Ex:7 JSX version mapping</p>
       <ul>
         {items.map((item, index) => (
           <li key={index}>{item}</li>
@@ -83,13 +96,17 @@ function List2() {
     "div",
     {},
     React.createElement("p", { className: "ex" }, "Ex:8 Under the hood"),
-    React.createElement("ul", {},
+    React.createElement(
+      "ul",
+      {},
       items.map((item, index) =>
         React.createElement("li", { key: index }, item)
       )
     )
   );
 }
+
+// ------------------App.jsx
 function App() {
   return (
     <>
@@ -98,10 +115,15 @@ function App() {
       <Hood2 /> <br /> <br />
       <NestedHood />
       <NestedHood2 /> <br /> <br />
-      <User name="sumit sarkar"/>
-      <User2 name="bappy sarkar"/> <br /><br />
+      <User name="sumit sarkar" />
+      <User2 name="bappy sarkar" /> <br />
+      <br />
       <List /> <br />
       <List2 />
+      <br />
+      <br />
+      <h1>Icon</h1>
+      <Icon />
     </>
   );
 }

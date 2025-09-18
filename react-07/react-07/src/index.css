@@ -68,14 +68,16 @@ p{
 }
 button{
   border-radius: 5px;
-  color:red;
-  background: #fafa;
-  padding: 8px 35px;
+  background: #fff;
+  color: #000;
+  width: 40px;
   text-transform: capitalize;
   cursor: pointer;
+  font-size: 2rem;
 }
 pre{
-  text-transform: lowercase
+  text-transform: lowercase;
+  color:red;
 }
 img{
   width: 100%;
@@ -87,5 +89,5 @@ img{
   border-radius: 50%;
   color: #fff;
   margin: 10px;
-  background: ;
+  
 }

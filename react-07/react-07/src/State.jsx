@@ -42,7 +42,8 @@ export default class State extends Component {
 
   render() {
     return (
-      <div>
+      <>
+      <div className="state">
         <h1>state, setState and event handler</h1>
         <h3>1. State</h3>
         <pre> {demo}</pre>
@@ -58,6 +59,7 @@ export default class State extends Component {
           disabled={this.state.count === 0 ? true : false}
         >-</button>
       </div>
+      </>
     );
   }
 }

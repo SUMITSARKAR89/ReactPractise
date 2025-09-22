@@ -32,6 +32,7 @@ body{
   justify-content: center;
   align-items: center;
   margin-top: 2%;
+  flex-direction: column;
 }
 
     .signup-container {
@@ -87,7 +88,7 @@ body{
       font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition:  0.3s;
     }
 
     .btnSignup:hover {
@@ -204,4 +205,16 @@ body{
 
     .btn-secondary:hover {
       background: #e6b800;
+    }
+    button{
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      margin-top: 5px;
+      cursor: pointer;
     }

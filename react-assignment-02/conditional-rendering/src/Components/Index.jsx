@@ -85,8 +85,6 @@ export default class Index extends Component {
 
   render() {
     const { isSignUp } = this.state; //destructure
-    
-    
     return <>{isSignUp && <SignIn /> }</>;
   }
 }

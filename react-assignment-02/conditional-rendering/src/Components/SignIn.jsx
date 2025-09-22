@@ -1,3 +1,5 @@
+
+
 const demo = `
 একটি component folder তৈরি করো। যার ভেতরে দুইটা page থাকবে। 
 class component file এর ভেতরে construction function বানাও। 
@@ -11,6 +13,7 @@ class component file এর ভেতরে construction function বানা�
 `
 
 export default function SignIn() {
+  
   return (
     <>
     <h1 style={{textAlign : "center"}}> Conditional Rendering Assignment</h1>
@@ -44,7 +47,9 @@ export default function SignIn() {
             </button>
           </form>
         </div>
+        
       </div>
+      
     </>
   );
 }

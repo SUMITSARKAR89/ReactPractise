@@ -78,6 +78,7 @@ input {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 form{
   display: flex;
@@ -86,4 +87,24 @@ form{
 button{
   padding: 5px 10px;
   width: fit-content;
+}
+.sub-res{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+}
+.copySpan{
+  color: green;
+  position: absolute;
+  top: 45%;
+  right: 10%;
+  width: 200px;
+  height: 20px;
+  padding: 2px;
+  
+  border-radius: 10px;
+}
+h3{
+  color: yellow;
 }

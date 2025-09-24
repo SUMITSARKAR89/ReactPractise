@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 
 const demo = `
@@ -26,31 +25,53 @@ onInput → প্রতিটি টাইপিং এর সময় সাথ�
 onReset → form reset হলে কাজ করে।`;
 
 export default function From() {
+  // Example 1 → onChange
+
   const [name, setChange] = useState("");
-  const [name2, setInput] = useState("");
-
-  const [name3, setSubmit] = useState("");
-  const [emailSubmit, setEmailSubmit] = useState("");
-
+  // input এর ভ্যালু পরিবর্তন হলে state update হবে
   const handleChange = (e) => {
     let result = e.target.value;
     setChange(result);
   };
+
+  // Example 2 → onInput
+  const [name2, setInput] = useState("");
   const handleInput = (e) => {
     let result = e.target.value;
     setInput(result);
   };
 
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-    // alert(`submit : ${name3}`);
-    setEmailSubmit(`your email ${name3} is submitted`)
+  // Example 3 → onSubmit & onReset
 
-  }
-  const changeSubmit = (e) =>{
+  const [emailSubmit, setEmailSubmit] = useState(""); // submit হলে মেসেজ দেখাবে
+  const [name3, setSubmit] = useState(""); // input এর ভ্যালু
+
+  // email input এর value state এ সেট করা
+  const changeSubmit = (e) => {
     setSubmit(e.target.value);
-  }
+  };
+  // form submit করলে trigger হবে
+  const handleSubmit = (e) => {
+    e.preventDefault(); // preventDefault না দিলে form reload হয়ে যেত
+
+    if (name3.trim() === "") {
+      // যদি input খালি থাকে
+      setEmailSubmit("Empty !  please input your mail address");
+
+      // valid input হলে
+    } else {
+      setEmailSubmit(`your email ${name3} `);
+    }
+  };
+
   
+
+  // reset করলে সব input এবং message clear হয়ে যাবে
+  const handleReset = () => {
+    setSubmit("");
+    setEmailSubmit("");
+  };
+
   return (
     <>
       <div className="titleCard">
@@ -62,6 +83,7 @@ export default function From() {
       </div>
 
       <div className="container">
+        {/* example 1  */}
         <div className="example">
           <h3>a. Onchange Example</h3> <br />
           <input
@@ -74,6 +96,7 @@ export default function From() {
           <h2>OnChange Print = {name}</h2>
         </div>
 
+        {/* example 2  */}
         <div className="example">
           <h3>b. OnInput Example</h3> <br />
           <input
@@ -84,14 +107,25 @@ export default function From() {
           />
           <h2>OnInput Print = {name2}</h2>
         </div>
+
+        {/* example 3 */}
         <div className="example">
-          <h3>b. OnInput Example</h3> <br />
-          <form action="" onSubmit={handleSubmit}>
-            <input type="email" placeholder="Enter email" value={name3} onChange={changeSubmit} />
-            
-           
-            <span>{emailSubmit}</span>
-            
+          <h3>c. OnInput Example</h3> <br />
+          <form action="" onSubmit={handleSubmit} onReset={handleReset}>
+            <input type="email" value={name3} onChange={changeSubmit} />
+            <div className="sub-res">
+              <button type="submit">submit</button>
+              <button type="reset">reset</button>
+            </div>
+
+            <span
+              style={{
+                color: emailSubmit.includes("Empty") ? "red" : "green",
+                marginLeft: "10px",
+              }}
+            >
+              {emailSubmit}
+            </span>
           </form>
         </div>
       </div>

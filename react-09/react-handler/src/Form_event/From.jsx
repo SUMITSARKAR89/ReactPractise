@@ -73,7 +73,7 @@ export default function From() {
   };
 
   return (
-    <>
+    <div className="handlerCard">
       <div className="titleCard">
         <h1>3. Form Events → </h1>
         <p style={{ color: "yellow" }}>
@@ -129,6 +129,6 @@ export default function From() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }

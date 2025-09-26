@@ -29,7 +29,7 @@ export default function Mouseevent() {
     setMessage("⚡ Right Click Detected!");
   };
   return (
-    <>
+    <div className="handlerCard">
       <div className="titleCard">
         <h1>1. Mouse Events → </h1>
         <p style={{ color: "yellow" }}>
@@ -53,6 +53,6 @@ export default function Mouseevent() {
       >
         <p>🎯 </p>
       </div>
-    </>
+    </div>
   );
 }

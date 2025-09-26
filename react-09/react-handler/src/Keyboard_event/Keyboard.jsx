@@ -11,7 +11,7 @@ export default function Keyboard() {
   const handleKeyUp = (e) => setKey(`key Up : ${e.key} `);
   const handleKeyPress = (e) => setKey(`key press : ${e.key} `);
   return (
-    <>
+    <div className="handlerCard">
       <div className="titleCard">
         <h1>2. Keyboard Events → </h1>
         <p style={{ color: "yellow" }}>
@@ -31,6 +31,6 @@ export default function Keyboard() {
         onKeyPress={handleKeyPress}
         />
       </div>
-    </>
+    </div>
   );
 }

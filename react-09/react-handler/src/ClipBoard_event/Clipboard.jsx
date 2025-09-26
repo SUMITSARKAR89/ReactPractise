@@ -42,7 +42,7 @@ export default function Clipboard() {
   
 
   return (
-    <>
+    <div className="handlerCard">
 
       <div className="titleCard">
         <h1>4. Clipboard Events → </h1>
@@ -89,6 +89,6 @@ export default function Clipboard() {
           <span className='copySpan'>{paste} </span>
         </div>
       </div>
-    </>
+    </div>
   )
 }

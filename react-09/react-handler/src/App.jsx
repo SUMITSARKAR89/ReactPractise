@@ -10,8 +10,14 @@ import Image from "./Image_event/Image";
 import ImageEx2 from "./Image_event/ImageEx2";
 import Scroll from "./Scroll_event/Scroll";
 import Bubbling from "./EventBubbling/Bubbling";
+import React, { useState } from "react";
+import HomePage from "./HomePage";
+import SignUpPage from "./SignUpPage";
+
 
 function App() {
+  const [page, setPage] = useState("home");
+  
   return (
     <>
       <div className="main">
@@ -28,6 +34,7 @@ function App() {
           </p>
         </div>
       </div>
+      
       <Mouseevent />
       <Keyboard />
       <From />
@@ -40,6 +47,10 @@ function App() {
       <ImageEx2 />
       <Scroll />
       <Bubbling />
+       <div>
+      {page === "home" && <HomePage goToSignUp={() => setPage("signup")} />}
+      {page === "signup" && <SignUpPage goBack={() => setPage("home")} />}
+    </div>
     </>
   );
 }

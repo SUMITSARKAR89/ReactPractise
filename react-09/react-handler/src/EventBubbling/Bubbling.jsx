@@ -47,6 +47,7 @@ export default function Bubbling() {
           </button>
         </div>
       </div>
+     
     </div>
   );
 }

@@ -1,0 +1,73 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  
+
+}
+a{
+  text-decoration: none;
+}
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body{
+  max-width: 100%;
+  margin: 0 10%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+h1{
+  text-align: center;
+  text-transform: uppercase;
+  background: rgb(109, 109, 102);
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 50%;
+  margin:  auto;
+  transform: translateX(-50%);
+}
+.container{
+  background: #666e66;
+  width: 100%;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 15%;
+}
+form{
+  max-width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #595e59;
+}
+.input-group{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.input-group input{
+  padding: 10px;
+  color: #000;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+}
+button{
+  width: fit-content;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+
+}
+

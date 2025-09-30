@@ -1,4 +1,5 @@
 import From from "./Components/From"
+import FromEasy from "./Components/FromEasy"
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
     <From />
+    <FromEasy />
     </>
   )
 }

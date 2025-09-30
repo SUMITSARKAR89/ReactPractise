@@ -143,7 +143,9 @@ export default function Form() {
   return (
     <>
       <h1>Form</h1>
+      
       <div className="container">
+        <h2>Demo one</h2>
         <pre>{demo}</pre>
         <form action="" onSubmit={handleSubmit} onReset={handleReset}>
           {/* name input */}
